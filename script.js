@@ -1,115 +1,92 @@
-function convertToBinary() {
-    let value = document.getElementById("inputValue").value;
-    if (value !== '') {
-        let decimal = parseInt(value, 10);
-        if (!isNaN(decimal)) {
-            let binary = decimal.toString(2);
-            document.getElementById("result").innerText = `Ikilik: ${binary}`;
-        } else {
-            document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
-        }
-    } else {
-        document.getElementById("result").innerText = "Iltimos, son kiriting.";
-    }
+function clearResult() {
+    document.getElementById("result").innerText = "";
 }
 
-function convertToDecimal() {
+function convert(type) {
     let value = document.getElementById("inputValue").value;
-    if (value !== '') {
-        let binary = parseInt(value, 2);
-        if (!isNaN(binary)) {
-            document.getElementById("result").innerText = `O'nlik: ${binary}`;
-        } else {
-            document.getElementById("result").innerText = "Iltimos, to'g'ri ikilik sonini kiriting.";
-        }
-    } else {
-        document.getElementById("result").innerText = "Iltimos, son kiriting.";
-    }
-}
+    let result = '';
+    let decimal = parseInt(value, 10);
 
-function convertToQuaternary() {
-    let value = document.getElementById("inputValue").value;
-    if (value !== '') {
-        let decimal = parseInt(value, 10);
-        if (!isNaN(decimal)) {
-            let quaternary = decimal.toString(4);
-            document.getElementById("result").innerText = `To'rtlik: ${quaternary}`;
-        } else {
-            document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
-        }
-    } else {
+    if (!value) {
         document.getElementById("result").innerText = "Iltimos, son kiriting.";
+        return;
     }
-}
 
-function convertFromQuaternary() {
-    let value = document.getElementById("inputValue").value;
-    if (value !== '') {
-        let quaternary = parseInt(value, 4);
-        if (!isNaN(quaternary)) {
-            document.getElementById("result").innerText = `O'nlik: ${quaternary}`;
-        } else {
-            document.getElementById("result").innerText = "Iltimos, to'g'ri to'rtlik sonini kiriting.";
-        }
-    } else {
-        document.getElementById("result").innerText = "Iltimos, son kiriting.";
-    }
-}
+    switch (type) {
+        case 'bin':
+            if (!isNaN(decimal)) {
+                result = decimal.toString(2);
+                document.getElementById("result").innerText = `Ikilik: ${result}`;
+            } else {
+                document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
+            }
+            break;
 
-function convertToOctal() {
-    let value = document.getElementById("inputValue").value;
-    if (value !== '') {
-        let decimal = parseInt(value, 10);
-        if (!isNaN(decimal)) {
-            let octal = decimal.toString(8);
-            document.getElementById("result").innerText = `Sakkizlik: ${octal}`;
-        } else {
-            document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
-        }
-    } else {
-        document.getElementById("result").innerText = "Iltimos, son kiriting.";
-    }
-}
+        case 'dec':
+            let binary = parseInt(value, 2);
+            if (!isNaN(binary)) {
+                result = binary.toString(10);
+                document.getElementById("result").innerText = `O'nlik: ${result}`;
+            } else {
+                document.getElementById("result").innerText = "Iltimos, to'g'ri ikilik sonini kiriting.";
+            }
+            break;
 
-function convertFromOctal() {
-    let value = document.getElementById("inputValue").value;
-    if (value !== '') {
-        let octal = parseInt(value, 8);
-        if (!isNaN(octal)) {
-            document.getElementById("result").innerText = `O'nlik: ${octal}`;
-        } else {
-            document.getElementById("result").innerText = "Iltimos, to'g'ri sakkizlik sonini kiriting.";
-        }
-    } else {
-        document.getElementById("result").innerText = "Iltimos, son kiriting.";
-    }
-}
+        case 'quaternary':
+            if (!isNaN(decimal)) {
+                result = decimal.toString(4);
+                document.getElementById("result").innerText = `To'rtlik: ${result}`;
+            } else {
+                document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
+            }
+            break;
 
-function convertToHexadecimal() {
-    let value = document.getElementById("inputValue").value;
-    if (value !== '') {
-        let decimal = parseInt(value, 10);
-        if (!isNaN(decimal)) {
-            let hexadecimal = decimal.toString(16).toUpperCase();
-            document.getElementById("result").innerText = `O'n oltilik: ${hexadecimal}`;
-        } else {
-            document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
-        }
-    } else {
-        document.getElementById("result").innerText = "Iltimos, son kiriting.";
-    }
-}
+        case 'decFromQuaternary':
+            let quaternary = parseInt(value, 4);
+            if (!isNaN(quaternary)) {
+                result = quaternary.toString(10);
+                document.getElementById("result").innerText = `O'nlik: ${result}`;
+            } else {
+                document.getElementById("result").innerText = "Iltimos, to'g'ri to'rtlik sonini kiriting.";
+            }
+            break;
 
-function convertFromHexadecimal() {
-    let value = document.getElementById("inputValue").value;
-    if (value !== '') {
-        let hexadecimal = parseInt(value, 16);
-        if (!isNaN(hexadecimal)) {
-            document.getElementById("result").innerText = `O'nlik: ${hexadecimal}`;
-        } else {
-            document.getElementById("result").innerText = "Iltimos, to'g'ri o'n oltilik sonini kiriting.";
-        }
-    } else {
-        document.getElementById("result").innerText = "Iltimos, son kiriting.";
+        case 'octal':
+            if (!isNaN(decimal)) {
+                result = decimal.toString(8);
+                document.getElementById("result").innerText = `Sakkizlik: ${result}`;
+            } else {
+                document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
+            }
+            break;
+
+        case 'decFromOctal':
+            let octal = parseInt(value, 8);
+            if (!isNaN(octal)) {
+                result = octal.toString(10);
+                document.getElementById("result").innerText = `O'nlik: ${result}`;
+            } else {
+                document.getElementById("result").innerText = "Iltimos, to'g'ri sakkizlik sonini kiriting.";
+            }
+            break;
+
+        case 'hexadecimal':
+            if (!isNaN(decimal)) {
+                result = decimal.toString(16).toUpperCase();
+                document.getElementById("result").innerText = `O'n oltilik: ${result}`;
+            } else {
+                document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
+            }
+            break;
+
+        case 'decFromHex':
+            let hex = parseInt(value, 16);
+            if (!isNaN(hex)) {
+                result = hex.toString(10);
+                document.getElementById("result").innerText = `O'nlik: ${result}`;
+            } else {
+                document.getElementById("result").innerText = "Iltimos, to'g'ri o'n oltilik sonini kiriting.";
+            }
+            break;
     }
 }
