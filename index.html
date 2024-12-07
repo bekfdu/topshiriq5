@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanoq Tizimi Kalkulyatori</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sanoq sistema kalkulyatori</h1>
+        <label for="inputValue">Qiymat kiriting:</label>
+        <input type="text" id="inputValue" placeholder="Son kiriting">
+        
+        <div class="buttons">
+            <button onclick="convertToBinary()">O'nlik → Ikilik</button>
+            <button onclick="convertToDecimal()">Ikilik → O'nlik</button>
+        </div>
+        
+        <h3>Natija:</h3>
+        <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
