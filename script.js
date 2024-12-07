@@ -26,3 +26,32 @@ function convertToDecimal() {
         document.getElementById("result").innerText = "Iltimos, son kiriting.";
     }
 }
+
+function convertToQuaternary() {
+    let value = document.getElementById("inputValue").value;
+    if (value !== '') {
+        let decimal = parseInt(value, 10);
+        if (!isNaN(decimal)) {
+            let quaternary = decimal.toString(4);
+            document.getElementById("result").innerText = `To'rtlik: ${quaternary}`;
+        } else {
+            document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
+        }
+    } else {
+        document.getElementById("result").innerText = "Iltimos, son kiriting.";
+    }
+}
+
+function convertFromQuaternary() {
+    let value = document.getElementById("inputValue").value;
+    if (value !== '') {
+        let quaternary = parseInt(value, 4);
+        if (!isNaN(quaternary)) {
+            document.getElementById("result").innerText = `O'nlik: ${quaternary}`;
+        } else {
+            document.getElementById("result").innerText = "Iltimos, to'g'ri to'rtlik sonini kiriting.";
+        }
+    } else {
+        document.getElementById("result").innerText = "Iltimos, son kiriting.";
+    }
+}
