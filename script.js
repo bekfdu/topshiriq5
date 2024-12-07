@@ -55,3 +55,32 @@ function convertFromQuaternary() {
         document.getElementById("result").innerText = "Iltimos, son kiriting.";
     }
 }
+
+function convertToOctal() {
+    let value = document.getElementById("inputValue").value;
+    if (value !== '') {
+        let decimal = parseInt(value, 10);
+        if (!isNaN(decimal)) {
+            let octal = decimal.toString(8);
+            document.getElementById("result").innerText = `Sakkizlik: ${octal}`;
+        } else {
+            document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
+        }
+    } else {
+        document.getElementById("result").innerText = "Iltimos, son kiriting.";
+    }
+}
+
+function convertFromOctal() {
+    let value = document.getElementById("inputValue").value;
+    if (value !== '') {
+        let octal = parseInt(value, 8);
+        if (!isNaN(octal)) {
+            document.getElementById("result").innerText = `O'nlik: ${octal}`;
+        } else {
+            document.getElementById("result").innerText = "Iltimos, to'g'ri sakkizlik sonini kiriting.";
+        }
+    } else {
+        document.getElementById("result").innerText = "Iltimos, son kiriting.";
+    }
+}
