@@ -1,4 +1,4 @@
-# Sanoq Tizimi Kalkulyatori
+# Sanoq sistema kalkulyatori
 
 Bu loyiha turli sanoq tizimlarida (ikilik, to'rtlik, sakkizlik, o'nlik va o'n oltilik) sonlarni konvertatsiya qilish uchun veb-kalkulyatordir. Kalkulyator foydalanuvchiga kiritingan sonni tanlangan tizimda ko'rsatib beradi.
 
@@ -30,7 +30,7 @@ Loyihani o'z kompyuteringizda ishga tushirish uchun quyidagi qadamlarni bajaring
 
 1. Repozitoriyani klonlash:
    ```bash
-   git clone https://github.com/your-username/number-system-calculator.git
+   git clone https://github.com/bekfdu/topshiriq5.git
 Loyihaga kirish:
 
 bash
