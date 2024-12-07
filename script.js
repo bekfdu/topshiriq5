@@ -84,3 +84,32 @@ function convertFromOctal() {
         document.getElementById("result").innerText = "Iltimos, son kiriting.";
     }
 }
+
+function convertToHexadecimal() {
+    let value = document.getElementById("inputValue").value;
+    if (value !== '') {
+        let decimal = parseInt(value, 10);
+        if (!isNaN(decimal)) {
+            let hexadecimal = decimal.toString(16).toUpperCase();
+            document.getElementById("result").innerText = `O'n oltilik: ${hexadecimal}`;
+        } else {
+            document.getElementById("result").innerText = "Iltimos, to'g'ri son kiriting.";
+        }
+    } else {
+        document.getElementById("result").innerText = "Iltimos, son kiriting.";
+    }
+}
+
+function convertFromHexadecimal() {
+    let value = document.getElementById("inputValue").value;
+    if (value !== '') {
+        let hexadecimal = parseInt(value, 16);
+        if (!isNaN(hexadecimal)) {
+            document.getElementById("result").innerText = `O'nlik: ${hexadecimal}`;
+        } else {
+            document.getElementById("result").innerText = "Iltimos, to'g'ri o'n oltilik sonini kiriting.";
+        }
+    } else {
+        document.getElementById("result").innerText = "Iltimos, son kiriting.";
+    }
+}
